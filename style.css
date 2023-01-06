@@ -10,7 +10,7 @@
 
 :root {
   --background: hsl(14, 36%, 91%);
-  --background2: hsl(9, 30%, 95%);
+  --background2: hsl(15, 31%, 95%);
   --text: hsl(0, 0%, 55%);
   --accent: hsl(11, 46%, 62%);
 }
@@ -27,10 +27,9 @@ html {
 }
 
 body {
-  width: 100vw;
   margin: 0 auto;
   font-family: 'BeVietnam';
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 h1,
@@ -86,7 +85,7 @@ nav #logo {
   object-fit: cover;
 }
 
-#hero p {
+#hero a {
   position: absolute;
   bottom: 75px;
   left: -25px;
@@ -99,7 +98,7 @@ nav #logo {
   color: #fff;
 }
 
-#hero p:hover {
+#hero a:hover {
   transition: 0.5s;
   transform: rotate(-90deg) translateX(10px);
   cursor: pointer;
@@ -121,10 +120,10 @@ nav #logo {
 
 /* Body - Commons */
 .section {
-  min-height: 50vh;
+  min-height: 100vh;
   display: grid;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 6rem 2rem;
 }
 
 .section div {
@@ -132,7 +131,6 @@ nav #logo {
   flex-wrap: wrap;
   gap: 35px;
   margin: 0 auto;
-  max-width: min(1440px, 80vw);
 }
 
 .section h1 {
@@ -180,19 +178,18 @@ nav #logo {
 
 /* Body - TopSection */
 #topSection {
-  background-color: var(--background);
+  /* background-color: var(--background); */
+  background: linear-gradient(180deg, var(--background) 0%, var(--background2) 100%);
 }
 
 #topSection img {
   max-height: 400px;
-  max-width: 85%;
+  max-width: min(85%, 300px);
   align-self: center;
   justify-self: center;
 }
 
 #topSection #cakeIMG {
-  position: relative;
-  min-width: 300px;
   display: grid;
 }
 
@@ -250,23 +247,69 @@ nav #logo {
 
 /* Body - Events */
 #events {
-  background-color: var(--background2);
-  display: flex;
-  flex-wrap: wrap;
+  background: linear-gradient(180deg, var(--background) 0%, #fff 100%);
+  display: grid;
+  gap: 75px;
 }
 
-#events img {
-  max-width: max(45vw, 300px);
-  object-fit: contain;
+#events #nextEvent img {
+  max-width: max(20vw, 350px);
+  border: 2px solid var(--accent);
   margin: 0 auto;
 }
 
 #events div {
   margin: auto;
   display: flex;
-  flex-direction: column;
   min-height: 275px;
-  min-width: 250px;
-  max-width: 350px;
-  justify-content: space-between;
+  width: min(80vw, 1200px);
+  justify-content: center;
+}
+
+#events div div {
+  display: grid;
+  width: 375px;
+}
+
+#events #truck {
+  max-width: min(450px, 80vw);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Body - Courses */
+#courses {
+  position: relative;
+  background: linear-gradient(180deg, var(--background) 0%, #fff 100%);
+}
+
+#courses div {
+  flex-direction: column;
+  justify-self: start;
+  margin: auto 0;
+  z-index: 2;
+}
+
+#courses img {
+  position: absolute;
+  top: -5vh;
+  left: 0;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 1000px) {
+  #courses div {
+    margin-left: 35%;
+    transform: translateX(-50%);
+  }
+
+  #courses img {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+/* Body - Contact */
+#contact {
+  background-color: var(--background);
 }
