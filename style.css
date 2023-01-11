@@ -74,34 +74,18 @@ nav #logo {
 
 /* Hero */
 #hero {
-  height: 90vh;
+  height: 70vh;
   width: 100vw;
   position: relative;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--background) 100%);
 }
 
-#hero video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-#hero a {
+#hero img {
   position: absolute;
-  bottom: 75px;
-  left: -25px;
-  transform: rotate(-90deg);
-  transition: 0.5s;
-  max-width: 15ch;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #fff;
-}
-
-#hero a:hover {
-  transition: 0.5s;
-  transform: rotate(-90deg) translateX(10px);
-  cursor: pointer;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 105%;
 }
 
 #hero h1 {
@@ -115,12 +99,12 @@ nav #logo {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 3px 3px 5px black;
+  text-shadow: 2px 2px 5px black;
 }
 
 /* Body - Commons */
 .section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: grid;
   margin: 0 auto;
   padding: 6rem 2rem;
@@ -178,12 +162,12 @@ nav #logo {
 
 /* Body - TopSection */
 #topSection {
-  /* background-color: var(--background); */
   background: linear-gradient(180deg, var(--background) 0%, var(--background2) 100%);
+  padding-bottom: 0;
 }
 
 #topSection img {
-  max-height: 400px;
+  max-height: 800px;
   max-width: min(85%, 300px);
   align-self: center;
   justify-self: center;
@@ -199,6 +183,11 @@ nav #logo {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+}
+
+#topSectionFirst {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 #topSectionFirst #FirstSpeech {
@@ -221,9 +210,47 @@ nav #logo {
   justify-content: center;
 }
 
-/* Body - Swiper */
-#swiper {
+/* Body - Events */
+#events {
+  background: var(--background);
+  display: grid;
+  gap: 75px;
+}
+
+#events #nextEvent img {
+  max-width: max(20vw, 350px);
+  border: 2px solid var(--accent);
   margin: 0 auto;
+}
+
+#events div {
+  margin: auto;
+  display: flex;
+  min-height: 275px;
+  width: min(80vw, 1200px);
+}
+
+#events div div {
+  width: 375px;
+}
+
+#events div #nextEvent iframe {
+  height: 350px;
+  width: 100%;
+  box-shadow: 0px 0px 4px var(--accent);
+}
+
+#events #truck {
+  max-width: min(450px, 80vw);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Body - Courses - Swiper */
+#swiper {
+  /* width: 100%; */
+  margin: 0 auto;
+  margin-bottom: 12rem;
   padding-top: 5rem;
   display: flex;
   flex-wrap: wrap;
@@ -240,72 +267,64 @@ nav #logo {
   color: var(--accent);
 }
 
-#swiper img {
-  max-width: min(350px, 80vw);
-  margin: auto;
+#swiper div {
+  width: min(350px, 80vw);
+  min-height: 233.7px;
+  position: relative;
 }
 
-/* Body - Events */
-#events {
-  background: linear-gradient(180deg, var(--background) 0%, #fff 100%);
-  display: grid;
-  gap: 75px;
+#swiper div div {
+  position: relative;
+  overflow: hidden;
 }
 
-#events #nextEvent img {
-  max-width: max(20vw, 350px);
-  border: 2px solid var(--accent);
-  margin: 0 auto;
+#swiper div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1.25s cubic-bezier(0.19, 1, 0.22, 1);
+  max-width: 350px;
+  object-fit: cover;
 }
 
-#events div {
-  margin: auto;
-  display: flex;
-  min-height: 275px;
-  width: min(80vw, 1200px);
-  justify-content: center;
+#swiper div img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-#events div div {
-  display: grid;
-  width: 375px;
-}
-
-#events #truck {
-  max-width: min(450px, 80vw);
-  object-fit: contain;
-  margin: 0 auto;
+#swiper div p {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
 }
 
 /* Body - Courses */
 #courses {
+  background: linear-gradient(180deg, var(--background2) 0%, var(--background) 100%);
   position: relative;
-  background: linear-gradient(180deg, var(--background) 0%, #fff 100%);
 }
 
-#courses div {
+#courses #coursesChoice {
   flex-direction: column;
-  justify-self: start;
+  justify-self: center;
   margin: auto 0;
   z-index: 2;
 }
 
-#courses img {
+#courses #coursesDesc img {
+  max-height: 75vh;
   position: absolute;
-  top: -5vh;
-  left: 0;
-  opacity: 0.5;
+  bottom: 5%;
+  left: 50%;
+  opacity: 0.75;
+  transform: translateX(-50%);
 }
 
 @media screen and (min-width: 1000px) {
-  #courses div {
-    margin-left: 35%;
-    transform: translateX(-50%);
-  }
-
-  #courses img {
+  #courses #coursesDesc img {
+    position: inherit;
     opacity: 1;
-    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
