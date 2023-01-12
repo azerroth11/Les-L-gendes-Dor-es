@@ -9,10 +9,10 @@
 }
 
 :root {
-  --background: hsl(14, 36%, 91%);
+  --background: #f0e4e0;
   --background2: hsl(15, 31%, 95%);
   --text: hsl(0, 0%, 55%);
-  --accent: hsl(11, 46%, 62%);
+  --accent: #cb8272;
 }
 
 * {
@@ -29,7 +29,7 @@ html {
 body {
   margin: 0 auto;
   font-family: 'BeVietnam';
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 h1,
@@ -50,31 +50,9 @@ span {
   text-decoration: none;
 }
 
-/* Navigation */
-nav {
-  background-color: rgba(255, 255, 255, 0.75);
-  height: 10vh;
-  display: flex;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav #navbar {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-}
-
-nav #logo {
-  max-height: 85%;
-  margin: 5px auto;
-}
-
 /* Hero */
 #hero {
-  height: 70vh;
+  height: 75vh;
   width: 100vw;
   position: relative;
   background: linear-gradient(180deg, var(--accent) 0%, var(--background) 100%);
@@ -86,6 +64,15 @@ nav #logo {
   left: 50%;
   transform: translate(-50%);
   height: 105%;
+}
+
+#hero svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  height: 27.5%;
+  filter: drop-shadow(1px 1px 3px rgb(0 0 0 / 0.9));
 }
 
 #hero h1 {
@@ -104,7 +91,6 @@ nav #logo {
 
 /* Body - Commons */
 .section {
-  /* min-height: 100vh; */
   display: grid;
   margin: 0 auto;
   padding: 6rem 2rem;
@@ -163,6 +149,7 @@ nav #logo {
 /* Body - TopSection */
 #topSection {
   background: linear-gradient(180deg, var(--background) 0%, var(--background2) 100%);
+  padding-top: 10rem;
   padding-bottom: 0;
 }
 
@@ -173,41 +160,19 @@ nav #logo {
   justify-self: center;
 }
 
-#topSection #cakeIMG {
-  display: grid;
-}
-
-#topSection #cakeIMG p {
-  transform: rotate(-90deg) translate(-50%, -75px);
-  max-width: 30ch;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-}
-
-#topSectionFirst {
+#containerTopSection {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-#topSectionFirst #FirstSpeech {
-  margin: auto;
+#containerTopSection #FirstSpeech {
+  margin: 0 auto 4rem auto;
   display: flex;
   flex-direction: column;
   min-height: 275px;
   min-width: 250px;
   max-width: 350px;
   justify-content: space-between;
-}
-
-#topSectionFirst #marshmallow {
-  transform: rotate(-15deg) translateX(50px);
-}
-
-#topSectionSecond {
-  margin: 2rem auto;
-  padding: 0 2rem;
-  justify-content: center;
 }
 
 /* Body - Events */
@@ -248,9 +213,7 @@ nav #logo {
 
 /* Body - Courses - Swiper */
 #swiper {
-  /* width: 100%; */
-  margin: 0 auto;
-  margin-bottom: 12rem;
+  margin: 6rem auto;
   padding-top: 5rem;
   display: flex;
   flex-wrap: wrap;
@@ -300,7 +263,7 @@ nav #logo {
 
 /* Body - Courses */
 #courses {
-  background: linear-gradient(180deg, var(--background2) 0%, var(--background) 100%);
+  background: var(--background2);
   position: relative;
 }
 
@@ -320,15 +283,92 @@ nav #logo {
   transform: translateX(-50%);
 }
 
+/* Body - Contact */
+#contact {
+  display: grid;
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+#contact .containerContact {
+  display: grid;
+}
+
+#contact .containerContact h1 {
+  text-align: center;
+}
+
+#contact .containerContact a {
+  width: 225px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  background: var(--accent);
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(209, 141, 125, 0.25);
+  transition: scale 0.25s;
+}
+
+#contact .containerContact a:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+/* Footer */
+footer {
+  background-color: var(--background2);
+  width: 100%;
+  padding: 1rem;
+}
+
+footer .containerFooter {
+  display: flex;
+  gap: 10px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+footer .containerFooter a {
+  align-self: center;
+}
+
+footer .containerFooter img {
+  max-width: 50px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+footer .containerFooter div {
+  margin: 0 auto;
+}
+
+footer .containerFooter p {
+  max-width: none;
+  margin: 1rem auto 0 auto;
+  text-align: center;
+}
+
+footer .containerFooter div div div {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+footer .containerFooter a:hover {
+  scale: 1.025;
+  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.5));
+}
+
 @media screen and (min-width: 1000px) {
+  #containerTopSection #FirstSpeech {
+    margin: auto;
+  }
+
   #courses #coursesDesc img {
     position: inherit;
     opacity: 1;
     transform: translateX(-50%);
   }
-}
-
-/* Body - Contact */
-#contact {
-  background-color: var(--background);
 }
