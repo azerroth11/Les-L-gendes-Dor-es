@@ -60,7 +60,7 @@ span {
 
 #hero img {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 50%;
   transform: translate(-50%);
   height: 105%;
@@ -70,7 +70,7 @@ span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -85%);
+  transform: translate(-50%, -50%);
   height: 27.5%;
   filter: drop-shadow(1px 1px 3px rgb(0 0 0 / 0.9));
 }
@@ -149,7 +149,7 @@ span {
 /* Body - TopSection */
 #topSection {
   background: linear-gradient(180deg, var(--background) 0%, var(--background2) 100%);
-  padding-top: 10rem;
+  padding-top: 12rem;
   padding-bottom: 0;
 }
 
